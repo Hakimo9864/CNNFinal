@@ -4,6 +4,7 @@ from torch import nn
 from torch.utils.data import DataLoader
 from torchvision import datasets, transforms
 
+# Dr. Bardoe is COOL!
 # ============================================================
 # REAL CNN STARTER CODE
 #
