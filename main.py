@@ -75,11 +75,9 @@ transform = transforms.Compose([
 
 train_dataset = datasets.ImageFolder(os.path.join(DATA_DIR, "train"), transform=transform)
 val_dataset = datasets.ImageFolder(os.path.join(DATA_DIR, "val"), transform=transform)
-test_dataset = datasets.ImageFolder(os.path.join(DATA_DIR, "test"), transform=transform)
 
 train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True)
 val_loader = DataLoader(val_dataset, batch_size=BATCH_SIZE, shuffle=False)
-test_loader = DataLoader(test_dataset, batch_size=BATCH_SIZE, shuffle=False)
 
 print("Classes:", train_dataset.classes)
 
@@ -257,18 +255,7 @@ for epoch in range(EPOCHS):
     )
 
 
-# ============================================================
-# SECTION 9: TEST THE MODEL
-#
-# TASK:
-# Evaluate the final model on the test set.
-# ============================================================
 
-test_loss, test_acc = evaluate(model, test_loader, loss_fn)
-
-print("\nFinal test results")
-print(f"Test loss: {test_loss:.4f}")
-print(f"Test accuracy: {test_acc:.4f}")
 
 
 # ============================================================
